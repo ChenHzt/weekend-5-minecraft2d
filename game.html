@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="game-grid">
+        <div class="inventory">
+            <ul>
+                <li data-item="dirt" class="inventory__item inventory__item--dirt">
+                    <div class="tile" data-type='dirt' data-count='0'></div>
+                </li>
+                <li data-item="dirtTop" class="inventory__item inventory__item--dirtTop">
+                    <div class="tile" data-type='dirtTop' data-count='0'></div>
+                </li>
+                <li data-item="tree" class="inventory__item inventory__item--tree">
+                    <div class="tile" data-type='tree' data-count='0'></div>
+                </li>
+                <li data-item="trunk" class="inventory__item inventory__item--trunk">
+                    <div class="tile" data-type='trunk' data-count='0'></div>
+                </li>
+                <li data-item="rock" class="inventory__item inventory__item--rock">
+                    <div class="tile" data-type='rock' data-count='0'></div>
+                </li>
+            </ul>
+        </div>
+        <div class="world">
+            <ul>
+                
+            </ul>
+        </div>
+        <div class="tools">
+            <ul data-current-tool='none'>
+                <li data-tool="pickaxe" class="tools__item tools__item--pickaxe">
+                    <span>Pickaxe</span>
+                    <div class="tools__item__img"></div>
+                </li>
+                <li data-tool="shovel" class="tools__item tools__item--shovel">
+                    <span>Shovel</span>
+                    <div class="tools__item__img"></div>
+                </li>
+                <li data-tool="axe" class="tools__item tools__item--axe">
+                    <span>Axe</span>
+                    <div class="tools__item__img"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="/js/new.js"></script>
+</body>
+</html>

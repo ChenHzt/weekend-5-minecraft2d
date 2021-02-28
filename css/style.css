@@ -1,0 +1,240 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'minecraft-bold';
+}
+
+@font-face{
+    font-family: 'minecraft-regular';
+    src: url('../fonts/1_Minecraft-Regular.otf');
+}
+
+@font-face{
+    font-family: 'minecraft-bold';
+    src: url('../fonts/3_Minecraft-Bold.otf');
+}
+
+
+ul{
+    list-style: none;
+}
+
+
+
+
+.game-grid{
+    display: grid;
+    grid-template-columns: 10% auto 10%;
+    height: 100vh;
+}
+
+
+
+
+.inventory{
+    background-color: #000000;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding-top:20px; */
+}
+
+.inventory ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-; */
+}
+
+.inventory__item{
+    height: 100%;
+    width:60%;
+    min-width: 100px;
+    background-color: #000000;
+    margin:5px;
+    text-align: center;
+    padding:5px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    color:white
+}
+
+.inventory__item--current{
+    background-color: blue;
+}
+
+.inventory__item div{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.inventory__item div::after{
+    content: attr(data-count);
+    position: absolute;
+    top:5px;
+    left: 5px;
+
+}
+.world{
+    background-color: blueviolet;
+    height: 100%;
+    overflow-x:scroll;
+}
+
+.world ul{
+    width: 100%;
+    height: 100%;
+    
+}
+
+.world ul[data-current-tool='none']{
+    
+    cursor: auto;
+}
+
+.world ul[data-current-tool='pickaxe']{
+    
+    cursor: url(/img/pickaxe-cursor.png), auto;
+}
+
+.world ul[data-current-tool='axe']{
+    
+    cursor: url(/img/axe-cursor.png) , auto;
+}
+
+.world ul[data-current-tool='shovel']{
+    
+    cursor: url(/img/shovel-cursor.png),  auto;
+}
+
+.tools{
+    background-color: #000000;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.tools ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tools__item{
+    height: 100%;
+    width:90%;
+    /* min-width: 90px; */
+    max-height: 90px;
+    background-color: #000000;
+    margin:5px;
+    text-align: center;
+    padding:5px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    color:white;
+    border: white 1px solid;
+}
+
+.tools__item--current{
+    background-color: blue;
+}
+
+.tools__item .tools__item__img{
+    height: 100%;
+    margin: 2%;
+}
+
+.tools__item--axe .tools__item__img{
+    background: url(../img/tool-axe.png) no-repeat center center/cover;
+    background-size: auto;
+}
+
+
+.tools__item--pickaxe .tools__item__img{
+    background: url(../img/tool-pickaxe.png) no-repeat center center/cover;
+    background-size: auto;
+}
+
+
+.tools__item--shovel .tools__item__img{
+    background: url(../img/tool-shovel.png) no-repeat center center/cover;
+    background-size: auto;
+}
+.tile{
+    background-color: crimson;
+    height: 100%;
+    width: 100%;
+    min-width: 30px;
+    
+}
+
+.tile:hover{
+    box-shadow:inset 0px 0px 0px 1px black;
+}
+
+.tile[data-type='sky']{
+    background-color: cyan;
+}
+
+.tile[data-type='dirtTop']{
+    background: url(/img/dirtTop.png) no-repeat center center/cover;
+}
+
+.tile[data-type='dirt']{
+    background: url(/img/dirt.png) no-repeat center center/cover;
+    
+}
+
+.tile[data-type='cloud']{
+    background-color: white;
+}
+
+.tile[data-type='tree']{
+    background: url(/img/tree.jpeg) no-repeat center center/cover;
+
+}
+
+.tile[data-type='trunk']{
+    background: url(/img/treeTrunck.png) no-repeat center center/cover;
+}
+
+.tile[data-type='rock']{
+    background: url(/img/stone.png) no-repeat center center/cover;
+    
+}
+
+@media(min-width:1200px){
+    .game-grid{
+        display: grid;
+        grid-template-columns: 15% auto 15%;
+        height: 100vh;
+    }
+    .tools__item{
+        width:60%;
+    }
+}
+/* 
+@media(min-width:1000px){
+    .inventory__item{
+        width: 30px;
+        height: 30px;
+    }
+    .inventory__item div{
+        width: 25px;
+        height: 25px;
+    }
+} */
